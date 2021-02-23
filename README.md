@@ -52,4 +52,4 @@ const emojis = [
 
 ## App Demo:
 
-![diceGifDemo](./diceRolling.gif)
+![emojiStoriesDemo](./emojiStories.gif)
