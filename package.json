@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "./node_modules/.bin/cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^6.5.0"
+  },
+  "dependencies": {
+    "emoji-regex": "^8.0.0"
+  }
+}
