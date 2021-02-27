@@ -67,19 +67,22 @@ const ul = document.querySelector("#description-list");
 let historyCount = 0;
 const emojiForm = document.querySelector("#emoji-story-form");
 const descriptionButton = document.querySelector("#submit-description-btn");
-let randomEmojis = [];
+let savedEmojisString = "";
 let lengthInput = document.querySelector("#story-length-input");
 
 
 emojiForm.addEventListener("submit", (event) => {
     event.preventDefault();
     let randomEmojis = [];
+    let savedEmojis = [];
     let num = Number(lengthInput.value);  
     for (let i = 0; i < num; i++) {
         let random = Math.floor(Math.random() * emojis.length);
         randomEmojis.push(emojis[random]);
+        savedEmojis.push(emojis[random]);
     }
     emojiStoryString.textContent = `Story: ${randomEmojis.join("")}`;
+    savedEmojisString = savedEmojis.join("");
     lengthInput.value = ""
 });
 
@@ -90,7 +93,7 @@ descriptionButton.addEventListener("click", (event) => {
     const emojiDescription = document.querySelector("#description-input");
     historyTitle.textContent = `${historyCount} Saved Stories`;
     const descriptionListItem = document.createElement("li");
-    descriptionListItem.textContent = `${randomEmojis.join("")}: ${emojiDescription.value}`;
+    descriptionListItem.textContent = `${savedEmojisString}: ${emojiDescription.value}`;
     ul.appendChild(descriptionListItem);
     emojiDescription.value = ""
     emojiStoryString.textContent = "Story:"
