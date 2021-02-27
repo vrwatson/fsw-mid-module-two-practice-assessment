@@ -59,7 +59,6 @@ const emojis = [
   "🎊",
 ];
 
-// const generateEmoji = document.querySelector("#generate-story-btn");
 const emojiStoryString = document.querySelector("#emoji-story");
 const storyDescription = document.querySelector("#submit-description-btn");
 const historyTitle = document.querySelector("#history-title");
@@ -83,15 +82,14 @@ emojiForm.addEventListener("submit", (event) => {
     }
     emojiStoryString.textContent = `Story: ${randomEmojis.join("")}`;
     savedEmojisString = savedEmojis.join("");
-    lengthInput.value = ""
+    // lengthInput.value = ""
 });
 
 descriptionButton.addEventListener("click", (event) => {
     event.preventDefault();
-    debugger
     historyCount++;    
     const emojiDescription = document.querySelector("#description-input");
-    historyTitle.textContent = `${historyCount} Saved Stories`;
+    historyCount === 1 ? historyTitle.textContent = `${historyCount} Saved Story`: historyTitle.textContent = `${historyCount} Saved Stories`; 
     const descriptionListItem = document.createElement("li");
     descriptionListItem.textContent = `${savedEmojisString}: ${emojiDescription.value}`;
     ul.appendChild(descriptionListItem);

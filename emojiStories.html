@@ -17,7 +17,7 @@
         </section>
         <section id="length-input">
           <label for="story-length-input">Length:</label>
-          <input type="number" id="story-length-input" placeholder="Number 1-50"/>
+          <input type="number" id="story-length-input" min="0" max="50"/>
           <button id="generate-story-btn" type="submit">Generate Emoji Story</button>
         </section>
       </form>
@@ -25,7 +25,7 @@
       <form id="emoji-description">
         <section>
           <label for="description-input">Description:</label>
-          <input input  id="description-input" type="text"/>
+          <input input  id="description-input" type="text" placeholder="Describe your emoji story here."/>
           <button id="submit-description-btn" type="submit">Submit Story Description</button>
         </section>
       </form>
